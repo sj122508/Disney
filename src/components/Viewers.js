@@ -4,23 +4,23 @@ import styled from 'styled-components';
 function Viewers() {
   return (
     <Container> 
-        <Wrap>
+        <Wrap hoverImg='viewers-disney.gif'>
             <img src='/images/viewers-disney.png' />
         </Wrap >
 
-        <Wrap>
+        <Wrap hoverImg='viewers-pixar.gif'>
             <img src='/images/viewers-pixar.png' />
         </Wrap >
 
-        <Wrap>
+        <Wrap hoverImg='viewers-marvel.gif'>
             <img src='/images/viewers-marvel.png' />
         </Wrap >
 
-        <Wrap>
+        <Wrap hoverImg='viewers-starwars.gif'>
             <img src='/images/viewers-starwars.png' />
         </Wrap >
 
-        <Wrap>
+        <Wrap hoverImg='viewers-national.gif'>
             <img src='/images/viewers-national.png' />
         </Wrap >
     </Container>
@@ -58,5 +58,10 @@ const Wrap = styled.div`
         border-color: rgba(249, 249, 249, 0.8);
         box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
         rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+        background: ${props => `url('images/${props.hoverImg}') center center / cover`};
     }
+`
+
+const HoverImg = styled.img`
+
 `
