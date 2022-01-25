@@ -15,28 +15,28 @@ function Movies() {
         </Wrap>
 
         <Wrap>
-            <img src= '/images/movies_2.jpeg' />
+            <img src= '/images/movies_3.jpg' />
         </Wrap>
 
         <Wrap>
-            <img src= '/images/movies_1.jpeg' />
+            <img src= '/images/movies_4.jpg' />
         </Wrap>
 
 
         <Wrap>
-            <img src= '/images/movies_2.jpeg' />
+            <img src= '/images/movies_5.jpg' />
         </Wrap>
 
         <Wrap>
-            <img src= '/images/movies_1.jpeg' />
+            <img src= '/images/movies_6.jpeg' />
         </Wrap>
 
         <Wrap>
-            <img src= '/images/movies_2.jpeg' />
+            <img src= '/images/movies_7.jpg' />
         </Wrap>
 
         <Wrap>
-            <img src= '/images/movies_1.jpeg' />
+            <img src= '/images/movies_8.jpg' />
         </Wrap>
       </Content>
   </Container>
@@ -57,6 +57,7 @@ const Content = styled.div`
 `
 
 const Wrap = styled.div`
+    height:250px;
     border-radius: 10px;
     // overflow: hidden;
     border: 3px solid rgba(249, 249, 249, 0.1);
@@ -64,12 +65,14 @@ const Wrap = styled.div`
     rgb(0 0 0 / 73%) 0px 16px 10px -10px;
     transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     cursor: pointer;
+    // position: relative;
 
     img { 
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 10px;
+        // position: absolute;
     }
 
     &:hover {

@@ -30,6 +30,16 @@ function Detail() {
                     <img src='/images/group-icon.png'/>
                 </GroupWatchButton>
             </Controls>
+
+            <SubTitle>
+                2018 • 7m • Family, Fantasy, Kids, Animation
+            </SubTitle>
+
+            <Description>
+                "We have unfinished business." See Marvel Studios’ 
+                “Black Widow” in theaters or on Disney+ with Premier Access on July 9. Additional fee required.
+            </Description>
+
         </Container>
     </div>
     )
@@ -126,4 +136,20 @@ const AddButton = styled.button`
 `
 const GroupWatchButton = styled(AddButton)`
     background: rgb(198, 198, 198);
+`
+
+const SubTitle = styled.div`
+    margin-left: 43px;
+    color: rgb(249,249,249);
+    font-size: 15px;
+    margin-top: 26px;
+
+`
+const Description = styled.div`
+    margin-left: 43px;
+    line-height: 1.4;
+    font-size: 20px;
+    margin-top: 16px;
+    color: rgb(249,249,249);
+    width: 700px;
 `
