@@ -10,6 +10,7 @@ import {
  } from 'react-router-dom';
  
 import Detail from './components/Detail';
+import Login from './components/Login';
 // 5:00 https://www.youtube.com/watch?v=0mVbNp1ol_w
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/detail" element={<Detail />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
       </Router>
     </div>
