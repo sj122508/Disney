@@ -11,7 +11,7 @@ function Detail() {
             <ImageTitle>
                 <img src='/images/blackwidow-logo.png' />
             </ImageTitle>
-            <Controls>
+        <Controls>
                 <PlayButton >
                     <img src='/images/play-icon-black.png'/>
                     <span>PLAY</span>

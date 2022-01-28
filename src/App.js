@@ -11,7 +11,9 @@ import {
  
 import Detail from './components/Detail';
 import Login from './components/Login';
-// 5:00 https://www.youtube.com/watch?v=0mVbNp1ol_w
+// 6:17 https://www.youtube.com/watch?v=0mVbNp1ol_w
+// npm install firebase --save
+// npm install firebase-tools --save
 function App() {
   return (
     <div>
