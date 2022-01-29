@@ -1,37 +1,37 @@
-import React, {useEffect} from 'react';
-import styled from 'styled-components';
-import ImgSlider from './ImgSlider';
-import Movies from './Movies';
-import Viewers from './Viewers';
-import dbFireStore from '../firebase-util';
-import { useDispatch } from 'react-redux';
-import { setMovies } from '../features/movie/movieSlice';
+import React, { useEffect } from 'react'
+import styled from 'styled-components'
+import ImgSlider from './ImgSlider'
+import Movies from './Movies'
+import Viewers from './Viewers'
+import dbFireStore from '../firebase-util'
+import { useDispatch } from 'react-redux'
+import { setMovies } from '../features/movie/movieSlice'
 
 function Home() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   // Initialization
-  useEffect(()=>{
-    dbFireStore.collection("movies").onSnapshot((snapshot) => {
-      let tempData = snapshot.docs.map((doc) => {
-        return { id: doc.id, ...doc.data()}
-      }).sort((a, b) => a.cardImg > b.cardImg ? 1:-1);
-      dispatch(setMovies(tempData));
-
-    });
-  }, []);
-  
+  useEffect(() => {
+    dbFireStore.collection('movies').onSnapshot((snapshot) => {
+      let tempData = snapshot.docs
+        .map((doc) => {
+          return { id: doc.id, ...doc.data() }
+        })
+        .sort((a, b) => (a.cardImg > b.cardImg ? 1 : -1))
+      dispatch(setMovies(tempData))
+    })
+  }, [])
 
   return (
-  <Container>
+    <Container>
       <ImgSlider />
       <Viewers />
       <Movies />
-  </Container>
+    </Container>
   )
 }
 
-export default Home;
+export default Home
 
 const Container = styled.main`
   overflow:hidden;  
