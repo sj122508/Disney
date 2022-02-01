@@ -1,11 +1,57 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { selectUserName, selectUserPhoto } from '../features/user/userSlice'
-import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import {
+  selectUserName,
+  selectUserPhoto,
+  setUserLogin,
+  setSignOut,
+} from '../features/user/userSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { auth, provider } from '../firebase-util'
 
 function Header() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const userName = useSelector(selectUserName)
   const userPhoto = useSelector(selectUserPhoto)
+
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        dispatch(
+          setUserLogin({
+            name: user.displayName,
+            email: user.email,
+            photo: user.photoURL,
+          }),
+        )
+        navigate('/')
+      }
+    })
+  }, [])
+
+  const signIn = () => {
+    auth.signInWithPopup(provider).then((result) => {
+      console.log(result)
+      let user = result.user
+      dispatch(
+        setUserLogin({
+          name: user.displayName,
+          email: user.email,
+          photo: user.photoURL,
+        }),
+      )
+      navigate('/')
+    })
+  }
+
+  const signOut = () => {
+    auth.signOut().then(() => {
+      dispatch(setSignOut())
+      navigate('/login')
+    })
+  }
 
   return (
     <Nav>
@@ -13,7 +59,7 @@ function Header() {
 
       {!userName ? (
         <LoginContainer>
-          <Login>Login</Login>
+          <Login onClick={signIn}>Login</Login>
         </LoginContainer>
       ) : (
         <>
@@ -49,7 +95,7 @@ function Header() {
             </a>
           </NavMenu>
 
-          <UserImg src="/images/pp.jpg" />
+          <UserImg onClick={signOut} src="/images/pp.jpg" />
         </>
       )}
     </Nav>

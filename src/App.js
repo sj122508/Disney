@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 import Detail from './components/Detail'
 import Login from './components/Login'
-// 6:40 https://www.youtube.com/watch?v=0mVbNp1ol_w
+// 7:16 https://www.youtube.com/watch?v=0mVbNp1ol_w
 // npm install firebase --save
 // npm install firebase-tools --save
 function App() {
