@@ -62,4 +62,8 @@ const Wrap = styled.div`
     box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
       rgb(0 0 0 / 72%) 0px 30px 22px -10px;
   }
+
+  @media only screen and (max-width: 415px) {
+    height: 100px;
+  }
 `

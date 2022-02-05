@@ -59,7 +59,7 @@ function Header() {
 
       {!userName ? (
         <LoginContainer>
-          <Login onClick={signIn}>Log-in</Login>
+          <Login onClick={signIn}>Login</Login>
         </LoginContainer>
       ) : (
         <>
