@@ -103,7 +103,7 @@ const ImageTitle = styled.div`
 const Controls = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 43px;
+  // margin-left: 43px;
 `
 
 const PlayButton = styled.button`
@@ -155,13 +155,13 @@ const GroupWatchButton = styled(AddButton)`
 `
 
 const SubTitle = styled.div`
-  margin-left: 43px;
+  // margin-left: 43px;
   color: rgb(249, 249, 249);
   font-size: 15px;
   margin-top: 26px;
 `
 const Description = styled.div`
-  margin-left: 43px;
+  // margin-left: 43px;
   line-height: 1.4;
   font-size: 20px;
   margin-top: 16px;
